@@ -1,17 +1,45 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Content
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div style="width:100%;">
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+    <div style="width:40%; float:left; margin: 5px;">
+    <ion-card style="width: 100%; min-height: 300px; ">
+      <ion-card-header>
+        <div style="position: absolute; right:15px; top: 15px;">
+          <ion-button>Add</ion-button>
+        </div>
+        <ion-card-title>
+          Play Lists
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Details
+      </ion-card-content>
+    </ion-card></div>
+
+    <div style="width:40%; float:left; margin: 5px;">
+    <ion-card style="width: 100%; min-height: 300px;">
+      <ion-card-header>
+        <div style="position: absolute; right:15px; top: 15px;">
+          <ion-button>Add</ion-button>
+        </div>
+        <ion-card-title>
+          Clips
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Details
+      </ion-card-content>
+    </ion-card>
+    </div>
+
+
+  </div>
 </ion-content>
