@@ -17,15 +17,15 @@ from threading import Thread
 
 import random
 import shutil
-import folium
-import geocoder
-import requests
+# import folium
+# import geocoder
+# import requests
 #
 # Flask server to control user emails and web3 minting
 #
 #
 #
-app = Flask(__name__)
+app = Flask(__name__, static_url_path="", static_folder="static")
 app.config['SECRET_KEY'] = 'secret!'
 CORS(app, support_credentials=True)
 
@@ -44,8 +44,12 @@ def index():
     print('\n\n-------Showing index-------')
 
     return render_template('index.html')
-    # return 'boardClick Server 12'
 
+@app.route('/static/tabs/Dash')
+def redirectDashUrl():
+    print('\n\n-------redirecting to index-------')
+
+    return redirect('/')
 
 @app.route('/fromClient', methods = ['POST'])
 def processClientRequest(env='UNIX'):
@@ -65,7 +69,7 @@ def processClientRequest(env='UNIX'):
     files = os.listdir(assetsDir)
     randomFiles = random.choices(files, k=4)
     # print(randomFiles)
-    
+
     videoUrl = []
     os.makedirs(os.path.join(dstDir, now ), exist_ok=True) # create a dst folder named with timestamp
 
@@ -73,7 +77,7 @@ def processClientRequest(env='UNIX'):
     dirList.sort()
     print(f'*** Older dir to be removed: {dirList[0: len(dirList) - maxCopy]}')
     for item in dirList[0: len(dirList) - maxCopy]:
-        shutil.rmtree(os.path.join(dstDir, item), ignore_errors=True) # do the rmdir action 
+        shutil.rmtree(os.path.join(dstDir, item), ignore_errors=True) # do the rmdir action
 
     for f in randomFiles:
         shutil.copyfile(os.path.join(assetsDir, f), os.path.join(dstDir, now, f))
@@ -88,7 +92,7 @@ def processClientRequest(env='UNIX'):
     #     return { 'resp' : False , 'msg' : err}
 
 # def getLocation():
-    
+
 #     # ip = geocoder.ip("me")
 #     ip = geocoder.ip("10.142.16.32")
 #     print(ip.city)
