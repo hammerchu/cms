@@ -36,7 +36,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tabs/Dash',
+    redirectTo: '/tabs/tab2',
     pathMatch: 'full'
   }
 ];

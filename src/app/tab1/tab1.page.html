@@ -1,25 +1,76 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      DashBoard
+      Channels
     </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content [fullscreen]="true">
   <div style="width:100%;">
+    <!-- <div style="margin-left:5%; margin-top:20px;">
+      <ion-chip color="dark">Screens</ion-chip>
+      <ion-chip color="dark">Ads Logic</ion-chip>
+      <ion-chip color="dark">All Kowloon</ion-chip>
+    </div> -->
     <div style="width:100%; float:left; margin: 5px;">
 
-      <ion-card style="max-width: 500px; min-height: 300px;">
+      <ion-card
+        style="border-radius: 30px; max-width: 80%; min-height: 500px; background: linear-gradient(297deg, rgb(143, 38, 223) 0%, rgb(23, 5, 48) 100%);">
         <ion-card-header>
-          <ion-card-title>
-            Schedules
+          <ion-card-title style="font-size: xx-large; margin-left: 30px;">
+            <div style="position: absolute; right:15px; top: 0px;">
+              <ion-button shape="round" color="light" (click)="addChannel()">
+                <ion-icon name="add-outline"></ion-icon>
+              </ion-button>
+              <ion-button shape="round" color="light">
+                <ion-icon name="create-outline"></ion-icon>
+              </ion-button>
+            </div>
+            Channels
           </ion-card-title>
+          <ion-card-subtitle style="margin-left: 30px;">
+            Sport channels, Art channels, etc
+            <!-- <ion-chip color="dark">Anytime Fitness</ion-chip>
+            <ion-chip color="dark">Pure Fitness</ion-chip>
+            <ion-chip color="dark">All Kowloon</ion-chip>
+            <ion-chip color="dark">
+              <ion-icon name="add-outline"></ion-icon>
+            </ion-chip> -->
+          </ion-card-subtitle>
         </ion-card-header>
         <ion-card-content>
-          Detail Schedules
+
         </ion-card-content>
       </ion-card>
+
     </div>
   </div>
+
+
+  <div #AddChannel>
+    <ion-modal [isOpen]="showAddChannel" (willDismiss)="onWillDismiss($event)">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <!-- <ion-buttons slot="start">
+              <ion-button (click)="cancel()">Cancel</ion-button>
+            </ion-buttons> -->
+            <ion-title>New channel</ion-title>
+            <!-- <ion-buttons slot="end">
+              <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+            </ion-buttons> -->
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+
+          <ion-title>Brian pls decide how to add channel</ion-title>
+          <!-- <ion-title>and assign to each screen</ion-title> -->
+
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </div>
+
+
 </ion-content>

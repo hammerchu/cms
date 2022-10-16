@@ -1,47 +1,168 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
       Screens
     </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content [fullscreen]="true">
-<div style="width:100%;">
+  <div style="width:100%;">
 
-  <div style="width:350px; float:left; margin: 5px;">
-  <ion-card style="width: 100%; min-height: 300px; ">
-    <ion-card-header>
-      <div style="position: absolute; right:15px; top: 15px;">
-        <ion-button color="light"><ion-icon name="add-outline"></ion-icon></ion-button>
-      </div>
-      <ion-card-title>
-        Screen Lists
-      </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      Details
-    </ion-card-content>
-  </ion-card></div>
+    <div style="width:100%; float:left; margin: 5px;">
 
-  <div style="width:350px; float:left; margin: 5px;">
-  <ion-card style="width: 100%; min-height: 300px;">
-    <ion-card-header>
-      <div style="position: absolute; right:15px; top: 15px;">
-        <ion-button color="light"><ion-icon name="add-outline"></ion-icon></ion-button>
-      </div>
-      <ion-card-title>
-        Screens
-      </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      Details
-    </ion-card-content>
-  </ion-card>
+      <ion-card
+        style="border-radius: 30px; max-width: 80%; min-height: 500px; background: linear-gradient(297deg, rgb(74, 74, 209) 0%, rgb(9, 5, 48) 100%);">
+        <ion-card-header>
+          <ion-card-title style="font-size: xx-large; margin-left: 30px;" >
+            <div style="position: absolute; right:15px; top: 0px;">
+              <ion-button shape="round" color="light" (click)="addScreen()">
+                <ion-icon name="add-outline"></ion-icon>
+              </ion-button>
+              <ion-button shape="round" color="light">
+                <ion-icon name="create-outline"></ion-icon>
+              </ion-button>
+            </div>
+            Screens
+          </ion-card-title>
+          <ion-card-subtitle>
+            <ion-chip color="dark">Anytime Fitness</ion-chip>
+            <ion-chip color="dark">Pure Fitness</ion-chip>
+            <ion-chip color="dark">All Kowloon</ion-chip>
+            <ion-chip color="dark"><ion-icon name="add-outline"></ion-icon></ion-chip>
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card
+        style="border-radius: 30px; max-width: 80%; min-height: 500px; background: linear-gradient(297deg, rgb(55, 55, 150) 0%, rgb(1, 1, 6) 100%);">
+        <ion-card-header>
+
+          <ion-card-title style="font-size: xx-large; margin-left: 30px;" >
+            Content Logic<a style="color: #333333;"> (Ads logic)</a>
+            <div style="position: absolute; right:15px; top: 1px;">
+              <ion-button shape="round" color="light" (click)="addContentLogic()">
+                <ion-icon name="add-outline"></ion-icon>
+              </ion-button>
+              <ion-button shape="round" color="light">
+                <ion-icon name="create-outline"></ion-icon>
+              </ion-button>
+            </div>
+          </ion-card-title>
+          <ion-card-subtitle  style="color:#999999 ;margin-left: 30px;">
+            Control what materials to be shown on each screen
+            <!-- <ion-chip color="dark">Anytime Fitness</ion-chip>
+            <ion-chip color="dark">Pure Fitness</ion-chip>
+            <ion-chip color="dark">All Kowloon</ion-chip>
+            <ion-chip color="dark"><ion-icon name="add-outline"></ion-icon></ion-chip> -->
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+
+        </ion-card-content>
+      </ion-card>
+
+    </div>
+
+
+
+  </div>
+
+  <div>
+    <ion-modal [isOpen]="showAddScreen" (willDismiss)="onWillDismiss($event)">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-buttons slot="start">
+              <ion-button (click)="cancel()">Cancel</ion-button>
+            </ion-buttons>
+            <!-- <ion-title>Welcome</ion-title> -->
+            <ion-buttons slot="end">
+              <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <ion-item style="--background:transparent;">
+            <!-- <ion-label position="stacked">Screen Name</ion-label> -->
+            <ion-input type="text" placeholder="Screen Name" maxlength="20" [(ngModel)]="name"></ion-input>
+          </ion-item>
+          <ion-item style="background:transparent;">
+            <!-- <ion-label position="stacked">Business Name</ion-label> -->
+            <ion-input type="text" placeholder="Business Name" maxlength="20" [(ngModel)]="businessName"></ion-input>
+          </ion-item>
+          <ion-item style="background:transparent;">
+            <!-- <ion-label position="stacked">Location</ion-label> -->
+            <ion-input type="text" placeholder="Location" [(ngModel)]="location"></ion-input>
+          </ion-item>
+          <ion-item style="background:transparent;">
+            <!-- <ion-label position="stacked">Operation Hours</ion-label> -->
+            <ion-input type="text" placeholder="Opening time" [(ngModel)]="startTime"></ion-input>
+            <ion-input type="text" placeholder="Closing time" [(ngModel)]="closeTime"></ion-input>
+
+          </ion-item>
+          <ion-item style="background:transparent;">
+            <!-- <ion-label position="stacked">Description</ion-label> -->
+            <ion-input type="text" placeholder="Your name" [(ngModel)]="description"></ion-input>
+          </ion-item>
+
+          <ion-item style="background:transparent;">
+            <!-- <ion-label position="stacked">Description</ion-label> -->
+            <ion-input type="text" placeholder="Screen pin" [(ngModel)]="screenPin"></ion-input>
+          </ion-item>
+
+          <ion-item style="background:transparent; float: left;">
+            <ion-label position="stacked" style="margin-bottom:20px;">Tags</ion-label>
+            <div>
+
+            <ion-chip style="color:black; --background:rgb(32, 124, 230);">Gym <ion-icon name="close-circle-outline"></ion-icon> </ion-chip>
+            <ion-chip style="color:black; --background:rgb(32, 138, 44);">Central <ion-icon name="close-circle-outline"></ion-icon> </ion-chip>
+            <ion-chip style="color:black; --background:antiquewhite;">Tier 1 <ion-icon name="close-circle-outline"></ion-icon> </ion-chip>
+            <!-- <ion-chip style="color:black; --background:#777777;">Create new tag <ion-icon name="add-outline"></ion-icon> </ion-chip> -->
+            </div>
+          </ion-item>
+          <ion-item style="background:transparent; float: left;">
+            <ion-label position="stacked" style="margin-bottom:20px;">Popular tags</ion-label>
+            <div>
+            <ion-chip style="color:black; --background:rgb(67, 121, 184);"> Cafe  </ion-chip>
+            <ion-chip style="color:black; --background:rgb(80, 184, 92);">WanChai   </ion-chip>
+            <ion-chip style="color:black; --background:rgb(174, 130, 74);">Tier 2  </ion-chip>
+            <ion-chip style="color:black; --background:#777777;">Create new tag  </ion-chip>
+            </div>
+          </ion-item>
+
+
+        </ion-content>
+      </ng-template>
+    </ion-modal>
   </div>
 
 
-</div>
+  <div #AddContentLogic>
+    <ion-modal [isOpen]="showAddContentLogic" (willDismiss)="onWillDismiss($event)">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <!-- <ion-buttons slot="start">
+              <ion-button (click)="cancel()">Cancel</ion-button>
+            </ion-buttons> -->
+            <ion-title>New content logic</ion-title>
+            <!-- <ion-buttons slot="end">
+              <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+            </ion-buttons> -->
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
 
+          <ion-title>Brian pls decide how to add content logic</ion-title>
+          <ion-title>and assign to each screen</ion-title>
+
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+  </div>
 
 </ion-content>
