@@ -25,7 +25,7 @@ import shutil
 #
 #
 #
-app = Flask(__name__, static_url_path="", static_folder="static")
+app = Flask(__name__, static_url_path="", static_folder="static_")
 app.config['SECRET_KEY'] = 'secret!'
 CORS(app, support_credentials=True)
 
