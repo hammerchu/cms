@@ -53,7 +53,7 @@ const routes = [
     },
     {
         path: '',
-        redirectTo: '/tabs/Dash',
+        redirectTo: '/tabs/tab2',
         pathMatch: 'full'
     }
 ];
@@ -161,7 +161,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
   \************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-tabs>\n\n  <ion-tab-bar slot=\"bottom\">\n    <ion-tab-button tab=\"Dash\">\n      <ion-icon name=\"square\"></ion-icon>\n      <ion-label>Dash</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"Screens\">\n      <ion-icon name=\"tv-outline\"></ion-icon>\n      <ion-label>Screens</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"Contents\">\n      <ion-icon name=\"videocam-outline\"></ion-icon>\n      <ion-label>Content</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"Analytic\">\n      <ion-icon name=\"bar-chart-outline\"></ion-icon>\n      <ion-label>analytic</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"Setting\">\n      <ion-icon name=\"options-outline\"></ion-icon>\n           <ion-label>setting</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n\n</ion-tabs>\n";
+module.exports = "<ion-tabs>\n\n  <ion-tab-bar slot=\"bottom\">\n\n    <ion-tab-button tab=\"Screens\">\n      <ion-icon name=\"tv-outline\"></ion-icon>\n      <ion-label>Screens</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"Dash\">\n      <ion-icon name=\"list-outline\"></ion-icon>\n      <ion-label>Channels</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"Contents\">\n      <ion-icon name=\"videocam-outline\"></ion-icon>\n      <ion-label>Library</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"Analytic\">\n      <ion-icon name=\"bar-chart-outline\"></ion-icon>\n      <ion-label>analytic</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"Setting\">\n      <ion-icon name=\"options-outline\"></ion-icon>\n           <ion-label>setting</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n\n</ion-tabs>\n";
 
 /***/ })
 
