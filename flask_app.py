@@ -45,11 +45,21 @@ def index():
 
     return render_template('index.html')
 
-@app.route('/static/tabs/Dash')
+@app.route('/static/tabs/Screens')
 def redirectDashUrl():
     print('\n\n-------redirecting to index-------')
 
     return redirect('/')
+@app.route('static/tabs/Channels')
+def redirectDashUrl():
+    print('\n\n-------redirecting to index-------')
+
+    return redirect('/')
+@app.route('static/tabs/Library')
+def redirectDashUrl():
+    print('\n\n-------redirecting to index-------')
+
+    return redirect('/static/tabs/Library')
 
 @app.route('/fromClient', methods = ['POST'])
 def processClientRequest(env='UNIX'):

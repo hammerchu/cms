@@ -25,7 +25,7 @@ const routes = [
         component: _tabs_page__WEBPACK_IMPORTED_MODULE_0__.TabsPage,
         children: [
             {
-                path: 'Dash',
+                path: 'Channels',
                 loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_tab1_tab1_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ../tab1/tab1.module */ 2168)).then(m => m.Tab1PageModule)
             },
             {
@@ -33,7 +33,7 @@ const routes = [
                 loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_tab2_tab2_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ../tab2/tab2.module */ 4608)).then(m => m.Tab2PageModule)
             },
             {
-                path: 'Contents',
+                path: 'Library',
                 loadChildren: () => Promise.all(/*! import() */[__webpack_require__.e("common"), __webpack_require__.e("src_app_tab3_tab3_module_ts")]).then(__webpack_require__.bind(__webpack_require__, /*! ../tab3/tab3.module */ 3746)).then(m => m.Tab3PageModule)
             },
             {
@@ -161,7 +161,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
   \************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-tabs>\n\n  <ion-tab-bar slot=\"bottom\">\n\n    <ion-tab-button tab=\"Screens\">\n      <ion-icon name=\"tv-outline\"></ion-icon>\n      <ion-label>Screens</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"Dash\">\n      <ion-icon name=\"list-outline\"></ion-icon>\n      <ion-label>Channels</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"Contents\">\n      <ion-icon name=\"videocam-outline\"></ion-icon>\n      <ion-label>Library</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"Analytic\">\n      <ion-icon name=\"bar-chart-outline\"></ion-icon>\n      <ion-label>analytic</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"Setting\">\n      <ion-icon name=\"options-outline\"></ion-icon>\n           <ion-label>setting</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n\n</ion-tabs>\n";
+module.exports = "<ion-tabs>\n\n  <ion-tab-bar slot=\"bottom\">\n\n    <ion-tab-button tab=\"Screens\">\n      <ion-icon name=\"tv-outline\"></ion-icon>\n      <ion-label>Screens</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"Channels\">\n      <ion-icon name=\"list-outline\"></ion-icon>\n      <ion-label>Channels</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"Library\">\n      <ion-icon name=\"videocam-outline\"></ion-icon>\n      <ion-label>Library</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"Analytic\">\n      <ion-icon name=\"bar-chart-outline\"></ion-icon>\n      <ion-label>analytic</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"Setting\">\n      <ion-icon name=\"options-outline\"></ion-icon>\n           <ion-label>setting</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n\n</ion-tabs>\n";
 
 /***/ })
 
